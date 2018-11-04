@@ -8,7 +8,7 @@ The FSharp.Configuration project contains type providers for the configuration o
 
 * [AppSettings](http://fsprojects.github.io/FSharp.Configuration/AppSettingsProvider.html)
 * [ResX](http://fsprojects.github.io/FSharp.Configuration/ResXProvider.html)
-* [Yaml](http://fsprojects.github.io/FSharp.Configuration/YamlProvider.html)
+* [Yaml](http://fsprojects.github.io/FSharp.Configuration/YamlConfigProvider.html)
 * [Ini](http://fsprojects.github.io/FSharp.Configuration/IniTypeProvider.html)
 
 <a href="http://fsprojects.github.io/FSharp.Configuration" target="_blank">Documentation available here.</a>
@@ -29,8 +29,7 @@ The FSharp.Configuration project contains type providers for the configuration o
 
 ## Maintainer(s)
 
-- [@forki](https://github.com/forki)
-- [@vasily-kirichenko](https://github.com/vasily-kirichenko)
-- [@dtchepak](https://github.com/dtchepak)
+- [@forki](https://github.com/forki) Steffen Forkmann
+- [@baronfel](https://github.com/baronfel) Chet Husk
 
-The default maintainer account for projects under "fsprojects" is [@fsgit](https://github.com/fsgit) - F# Community Project Incubation Space (repo management)
+The default maintainer account for projects under "fsprojects" is [@fsprojectsgit](https://github.com/fsprojectsgit) - F# Community Project Incubation Space (repo management)

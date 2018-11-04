@@ -24,6 +24,7 @@ Create a config file called `app.config` like this:
         <add key="TestDateTime" value="2014-05-18 11:14:28Z"/>
         <add key="TestTimeSpan" value="00:12:30"/>
         <add key="TestUri" value="http://fsharp.org" />
+        <add key="TestGuid" value="{7B7EB384-FEBA-4409-B560-66FF63F1E8D0}"/>
       </appSettings>
       <connectionStrings>
         <add name="Test" connectionString="Server=.;Database=SomeDatabase;Integrated Security=true"/>
@@ -62,3 +63,16 @@ Settings.ConfigFileName
 // read a connection string from the config
 Settings.ConnectionStrings.Test
 // [fsi:val it : string = "Server=.;Database=SomeDatabase;Integrated Security=true"]
+
+(**
+
+Using AppSettingsProvider in *.fsx-script
+-----------------------------------------
+
+The default executable is the current project .config. (Which is Fsi.exe.config in F# interactive.)
+How ever, if you want to modify the configuration of some other application, you can do with SelectExecutableFile-method:
+*)
+
+let path = System.IO.Path.Combine [|__SOURCE_DIRECTORY__ ; "bin"; "myProject.exe" |]
+Settings.SelectExecutableFile path
+Settings.Test2

@@ -9,7 +9,7 @@ This tutorial shows the use of the YamlConfig type provider.
 
 It's generated, hence the types can be used from any .NET language, not only from F# code.
 
-It can produce mutable properties for Yaml scalars (leafs), which means the object tree can be loaded, modified and saved into the original file or a stream as Yaml text. Adding new properties is not supported, however lists can be replaced with new ones atomically. This is intentionally, see below.
+It can produce mutable properties for Yaml scalars (leafs), which means the object tree can be loaded, modified and saved into the original file or a stream as Yaml text. Adding new properties is not supported, however lists can be replaced with new ones atomically. This is intentional, see below.
 
 The main purpose for this is to be used as part of a statically typed application configuration system which would have a single master source of configuration structure - a Yaml file. Then any F#/C# project in a solution will able to use the generated read-only object graph.
 
@@ -36,6 +36,7 @@ Create a `Config.yaml` file like this:
         ErrorNotificationRecipients:
             - user1@sample.com
             - user2@sample.com
+        ErrorMessageId: 9d165087-9b74-4313-ab90-89be897d3d93
     DB:
         ConnectionString: Data Source=server1;Initial Catalog=Database1;Integrated Security=SSPI;
         NumberOfDeadlockRepeats: 5
@@ -95,6 +96,7 @@ Let's create a F# project named `Config`, add reference to `FSharp.Configuration
       ErrorNotificationRecipients:
         - user1@sample.com
         - user2@sample.com
+      ErrorMessageId: 9d165087-9b74-4313-ab90-89be897d3d93
     DB:
       ConnectionString: Data Source=server1;Initial Catalog=Database1;Integrated Security=SSPI;
       NumberOfDeadlockRepeats: 5
@@ -135,6 +137,7 @@ It should outputs this:
       ErrorNotificationRecipients:
       - user1@sample.com
       - user2@sample.com
+      ErrorMessageId: 9d165087-9b74-4313-ab90-89be897d3d93
     DB:
       ConnectionString: Data Source=server1;Initial Catalog=Database1;Integrated Security=SSPI;
       NumberOfDeadlockRepeats: 5
@@ -169,6 +172,7 @@ So, add the following `RuntimeConfig.yaml` into the C# console project:
         - user11@sample.com
         - user22@sample.com
         - new_user@sample.com
+      ErrorMessageId: 9d165087-9b74-4313-ab90-89be897d3d93
     DB:
       ConnectionString: Data Source=server2;Initial Catalog=Database1;Integrated Security=SSPI;
       NumberOfDeadlockRepeats: 5
@@ -202,6 +206,7 @@ The output should be:
       - user11@sample.com
       - user22@sample.com
       - new_user@sample.com
+      ErrorMessageId: 9d165087-9b74-4313-ab90-89be897d3d93
     DB:
       ConnectionString: Data Source=server2;Initial Catalog=Database1;Integrated Security=SSPI;
       NumberOfDeadlockRepeats: 5
@@ -243,6 +248,7 @@ Mail:
   ErrorNotificationRecipients:
     - user1@sample.com
     - user2@sample.com
+  ErrorMessageId: 9d165087-9b74-4313-ab90-89be897d3d93
 DB:
   ConnectionString: Data Source=server1;Initial Catalog=Database1;Integrated Security=SSPI;
   NumberOfDeadlockRepeats: 5

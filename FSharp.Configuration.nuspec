@@ -12,8 +12,16 @@
     <summary>@summary@</summary>
     <description>@description@</description>
     <releaseNotes>@releaseNotes@</releaseNotes>
-    <copyright>Copyright 2013</copyright>
+    <copyright>Copyright 2014-2018</copyright>
     <tags>@tags@</tags>
-    <dependencies />
+    <references>
+        <reference file="FSharp.Configuration.dll" />
+        <reference file="SharpYaml.dll" />
+    </references>
+    <dependencies>
+      <group>
+          <dependency id="FSharp.Core" version="4.0.0.1" />
+      </group>
+    </dependencies>
   </metadata>
 </package>

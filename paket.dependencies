@@ -1,11 +1,28 @@
 source http://nuget.org/api/v2
+framework: >= net45
 
-nuget FAKE
-nuget NUnit.Runners
-nuget FSharp.Formatting
-nuget NUnit
-nuget Octokit
-nuget SourceLink.Fake
-nuget NuGet.CommandLine
+nuget SharpYaml
+nuget FSharp.Core ~> 4.0.0
 
-github fsharp/FAKE modules/Octokit/Octokit.fsx
+github fsprojects/FSharp.TypeProviders.SDK src/ProvidedTypes.fs
+github fsprojects/FSharp.TypeProviders.SDK src/ProvidedTypes.fsi
+github fsprojects/FSharp.TypeProviders.SDK src/ProvidedTypesTesting.fs
+
+group Build
+    framework: net45
+    source https://nuget.org/api/v2
+
+    nuget FAKE
+    nuget FSharp.Formatting
+    nuget Octokit
+    nuget NuGet.CommandLine
+    nuget SourceLink.Fake
+
+    github fsharp/FAKE modules/Octokit/Octokit.fsx
+
+group Test
+    framework: net461
+    source https://nuget.org/api/v2
+
+    nuget FSharp.Core redirects: force
+    nuget Expecto

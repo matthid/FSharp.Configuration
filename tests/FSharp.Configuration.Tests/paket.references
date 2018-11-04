@@ -1,1 +1,3 @@
-NUnit
+group Test
+  FSharp.Core
+  Expecto

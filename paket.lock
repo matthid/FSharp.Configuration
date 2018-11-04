@@ -1,27 +1,39 @@
+RESTRICTION: >= net45
 NUGET
-  remote: http://nuget.org/api/v2
-  specs:
-    FAKE (3.14.9)
-    FSharp.Compiler.Service (0.0.82)
-    FSharp.Formatting (2.7.1)
-      FSharp.Compiler.Service (>= 0.0.82)
-      FSharpVSPowerTools.Core (>= 1.7.0)
-    FSharpVSPowerTools.Core (1.7.0)
-      FSharp.Compiler.Service (>= 0.0.81)
-    Microsoft.Bcl (1.1.9)
-      Microsoft.Bcl.Build (>= 1.0.14)
-    Microsoft.Bcl.Build (1.0.21)
-    Microsoft.Net.Http (2.2.28)
-      Microsoft.Bcl (>= 1.1.9)
-      Microsoft.Bcl.Build (>= 1.0.14)
-    NuGet.CommandLine (2.8.3)
-    NUnit (2.6.4)
-    NUnit.Runners (2.6.4)
-    Octokit (0.6.2)
-      Microsoft.Net.Http
-    SourceLink.Fake (0.4.2)
+  remote: http://www.nuget.org/api/v2
+    FSharp.Core (4.0.0.1)
+    SharpYaml (1.6.2)
+GITHUB
+  remote: fsprojects/FSharp.TypeProviders.SDK
+    src/ProvidedTypes.fs (f0c4a6300db313eb2616c4f792cd6ae68c255e56)
+    src/ProvidedTypes.fsi (f0c4a6300db313eb2616c4f792cd6ae68c255e56)
+    src/ProvidedTypesTesting.fs (f0c4a6300db313eb2616c4f792cd6ae68c255e56)
+GROUP Build
+RESTRICTION: == net45
+NUGET
+  remote: https://www.nuget.org/api/v2
+    FAKE (4.64.12)
+    FSharp.Compiler.Service (2.0.0.6)
+    FSharp.Formatting (2.14.4)
+      FSharp.Compiler.Service (2.0.0.6)
+      FSharpVSPowerTools.Core (>= 2.3 < 2.4)
+    FSharpVSPowerTools.Core (2.3)
+      FSharp.Compiler.Service (>= 2.0.0.3)
+    NuGet.CommandLine (4.6.2)
+    Octokit (0.29)
+    SourceLink.Fake (1.1)
 GITHUB
   remote: fsharp/FAKE
-  specs:
-    modules/Octokit/Octokit.fsx (ddd071eeb73f5644a1f8edd9d870dc4a6c7a71a4)
-      Octokit
+    modules/Octokit/Octokit.fsx (800579e69ce35b77345ee21923ddf117168067cd)
+      Octokit (>= 0.20)
+GROUP Test
+RESTRICTION: == net461
+NUGET
+  remote: https://www.nuget.org/api/v2
+    Argu (5.1)
+      FSharp.Core (>= 4.0.0.1)
+    Expecto (7.0.1)
+      Argu (>= 5.1)
+      Mono.Cecil (>= 0.10)
+    FSharp.Core (4.3.4) - redirects: force
+    Mono.Cecil (0.10)
